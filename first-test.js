@@ -1,5 +1,7 @@
 import http from "k6/http";
+const url = "https://httpbin.test.k6.io/post";
 
 export default function () {
-  http.get("https://k6.io");
+  let response = http.post(url, "Hello world!");
+  console.log(response.json().data);
 }
