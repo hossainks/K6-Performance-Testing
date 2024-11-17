@@ -4,6 +4,12 @@ import { check, sleep } from "k6";
 const hostname = `https://${__ENV.DOMAIN}`;
 const url = `${hostname}/post`;
 
+export let options = {
+  vus: 10,
+  duration: "10s",
+  iterations: 100,
+};
+
 export default function () {
   let response = http.post(url, "Hello world!");
   check(response, {
