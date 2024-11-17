@@ -1,0 +1,22 @@
+name: k6 Load Test
+
+on:
+  push:
+    branches:
+      - main
+
+jobs:
+  k6:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Checkout code
+        uses: actions/checkout@v2
+
+      - name: Install k6
+        run: |
+          curl -s https://dl.bintray.com/loadimpact/k6-v0.30.0-linux-amd64.tar.gz | tar xz
+          sudo mv k6 /usr/local/bin/
+
+      - name: Run k6
+        run: |
+          k6 run --vus 10 --duration 30s script.js
