@@ -4,7 +4,7 @@
   "description": "",
   "main": "scripts.js",
   "scripts": {
-    "test": "k6 run scripts.js"
+    "test": "k6 run script.js"
   },
   "keywords": [],
   "author": "",
