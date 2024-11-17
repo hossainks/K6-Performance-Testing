@@ -23,4 +23,4 @@ jobs:
 
       - name: Run k6
         run: |
-          k6 run script.js
+          k6 run --env-file env.test script.js
