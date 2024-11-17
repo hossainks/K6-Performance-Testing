@@ -24,3 +24,7 @@ jobs:
       - name: Run k6
         run: |
           DOMAIN=httpbin.test.k6.io k6 run script.js
+
+      - name: Run k6
+        run: |
+          DOMAIN=httpbin.test.k6.io k6 run randomSleep.js
