@@ -19,5 +19,5 @@ export default function () {
   });
 
   console.log(response.json().data);
-  sleep(Math.random() * 5);
+  sleep(Math.random() * 2);
 }
